@@ -25,6 +25,22 @@ public class UserRegistration
 		{
 			System.out.println("Invalid first name.");
 		}
+		
+		System.out.println("Enter last name: ");
+		String lastName = sc.next();
+		String lastNamePattern = "^[A-Z][a-zA-Z]{2,}$";
+		Pattern compiledPattern2 = Pattern.compile(lastNamePattern);
+		Matcher matcher2 = compiledPattern2.matcher(lastName);
+		
+		if(matcher2.matches()) 
+		{
+			System.out.println("Valid last name.");
+		}
+		else
+		{
+			System.out.println("Invalid last name.");
+		}
+		
 	}
 
 }
