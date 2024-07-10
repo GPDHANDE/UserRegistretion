@@ -11,51 +11,51 @@ public class UserRegistration
 	public static void main(String[] args) 
 	{
 		Scanner sc = new Scanner(System.in);
-//		System.out.println("Enter first name: ");
-//		String firstName = sc.next();
-//		String firstNamePattern = "^[A-Z][a-zA-Z]{2,}$";
-//		Pattern compiledPattern1 = Pattern.compile(firstNamePattern);
-//		Matcher matcher1 = compiledPattern1.matcher(firstName);
-//		
-//		if(matcher1.matches()) 
-//		{
-//			System.out.println("Valid first name.");
-//		}
-//		else
-//		{
-//			System.out.println("Invalid first name.");
-//		}
-//		
-//		System.out.println("Enter last name: ");
-//		String lastName = sc.next();
-//		String lastNamePattern = "^[A-Z][a-zA-Z]{2,}$";
-//		Pattern compiledPattern2 = Pattern.compile(lastNamePattern);
-//		Matcher matcher2 = compiledPattern2.matcher(lastName);
-//		
-//		if(matcher2.matches()) 
-//		{
-//			System.out.println("Valid last name.");
-//		}
-//		else
-//		{
-//			System.out.println("Invalid last name.");
-//		}
-//		
-//		System.out.println("Enter the email: ");
-//		String email = sc.next();
-//		String emailPattern = "^[a-zA-Z0-9._%+-]+\\.[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}(\\.[a-zA-Z]{2,6})?$";
-//		
-//		Pattern compiledPattern3 = Pattern.compile(emailPattern);
-//		Matcher matcher3 = compiledPattern3.matcher(email);
-//		
-//		if(matcher3.matches())
-//		{
-//			System.out.println("Valid Email.");
-//		}
-//		else
-//		{
-//			System.out.println("Invalid Email.");
-//		}
+		System.out.println("Enter first name: ");
+		String firstName = sc.next();
+		String firstNamePattern = "^[A-Z][a-zA-Z]{2,}$";
+		Pattern compiledPattern1 = Pattern.compile(firstNamePattern);
+		Matcher matcher1 = compiledPattern1.matcher(firstName);
+		
+		if(matcher1.matches()) 
+		{
+			System.out.println("Valid first name.");
+		}
+		else
+		{
+			System.out.println("Invalid first name.");
+		}
+		
+		System.out.println("Enter last name: ");
+		String lastName = sc.next();
+		String lastNamePattern = "^[A-Z][a-zA-Z]{2,}$";
+		Pattern compiledPattern2 = Pattern.compile(lastNamePattern);
+		Matcher matcher2 = compiledPattern2.matcher(lastName);
+		
+		if(matcher2.matches()) 
+		{
+			System.out.println("Valid last name.");
+		}
+		else
+		{
+			System.out.println("Invalid last name.");
+		}
+		
+		System.out.println("Enter the email: ");
+		String email = sc.next();
+		String emailPattern = "^[a-zA-Z0-9._%+-]+\\.[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}(\\.[a-zA-Z]{2,6})?$";
+		
+		Pattern compiledPattern3 = Pattern.compile(emailPattern);
+		Matcher matcher3 = compiledPattern3.matcher(email);
+		
+		if(matcher3.matches())
+		{
+			System.out.println("Valid Email.");
+		}
+		else
+		{
+			System.out.println("Invalid Email.");
+		}
 		
 		System.out.println("Enter the mobile number: ");
 		String mobileNo = sc.nextLine();
@@ -71,6 +71,22 @@ public class UserRegistration
 		{
 			System.out.println("Invalid Mobile Number.");
 		}
+		
+		System.out.println("Enter the password: ");
+		String password = sc.next();
+		String passwordPattern1 = "^.{8,}$";
+		Pattern compiledPattern5 = Pattern.compile(passwordPattern1);
+		Matcher matcher5 = compiledPattern5.matcher(password);
+		
+		if(matcher5.matches())
+		{
+			System.out.println("Valid password.");
+		}
+		else
+		{
+			System.out.println("Invalid password.");
+		}
+		
 	}
 	
 
