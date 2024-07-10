@@ -58,6 +58,7 @@ public class UserRegistration
 		}
 		
 		System.out.println("Enter the mobile number: ");
+		sc.nextLine();
 		String mobileNo = sc.nextLine();
 		String mobilePattern = "^\\d{2} \\d{10}$";
 		Pattern compiledPattern4 = Pattern.compile(mobilePattern);
@@ -74,8 +75,8 @@ public class UserRegistration
 		
 		System.out.println("Enter the password: ");
 		String password = sc.next();
-		String passwordPattern2 = "^(?=.*[A-Z]).{8,}$";
-		Pattern compiledPattern5 = Pattern.compile(passwordPattern2);
+		String passwordPattern4 = "^(?=.*[A-Z])(?=.*[0-9])(?=.{0,9}[!@#$%^&*()_+=-{};:'<>,./?][^!@#$%^&*()_+=-{};:'<>,./?]{0,7}).{8,}$";
+		Pattern compiledPattern5 = Pattern.compile(passwordPattern4);
 		Matcher matcher5 = compiledPattern5.matcher(password);
 		
 		if(matcher5.matches())
