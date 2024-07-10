@@ -40,22 +40,38 @@ public class UserRegistration
 //		{
 //			System.out.println("Invalid last name.");
 //		}
+//		
+//		System.out.println("Enter the email: ");
+//		String email = sc.next();
+//		String emailPattern = "^[a-zA-Z0-9._%+-]+\\.[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}(\\.[a-zA-Z]{2,6})?$";
+//		
+//		Pattern compiledPattern3 = Pattern.compile(emailPattern);
+//		Matcher matcher3 = compiledPattern3.matcher(email);
+//		
+//		if(matcher3.matches())
+//		{
+//			System.out.println("Valid Email.");
+//		}
+//		else
+//		{
+//			System.out.println("Invalid Email.");
+//		}
 		
-		System.out.println("Enter the email: ");
-		String email = sc.next();
-		String emailPattern = "^[a-zA-Z0-9._%+-]+\\.[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}(\\.[a-zA-Z]{2,6})?$";
+		System.out.println("Enter the mobile number: ");
+		String mobileNo = sc.nextLine();
+		String mobilePattern = "^\\d{2} \\d{10}$";
+		Pattern compiledPattern4 = Pattern.compile(mobilePattern);
+		Matcher matcher4 = compiledPattern4.matcher(mobileNo);
 		
-		Pattern compiledPattern3 = Pattern.compile(emailPattern);
-		Matcher matcher3 = compiledPattern3.matcher(email);
-		
-		if(matcher3.matches())
+		if(matcher4.matches())
 		{
-			System.out.println("Valid Email.");
+			System.out.println("Valid Mobile Number.");
 		}
 		else
 		{
-			System.out.println("Invalid Email.");
+			System.out.println("Invalid Mobile Number.");
 		}
 	}
+	
 
 }
