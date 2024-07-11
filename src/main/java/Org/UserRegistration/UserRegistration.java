@@ -75,11 +75,11 @@ public class UserRegistration
 		
 		System.out.println("Enter the password: ");
 		String password = sc.next();
-		String passwordPattern4 = "^(?=.*[A-Z])(?=.*[0-9])(?=.{0,9}[!@#$%^&*()_+=-{};:'<>,./?][^!@#$%^&*()_+=-{};:'<>,./?]{0,7}).{8,}$";
-		Pattern compiledPattern5 = Pattern.compile(passwordPattern4);
-		Matcher matcher5 = compiledPattern5.matcher(password);
+		String passwordPattern5 = "^(?=.*[A-Z])(?=.*[0-9])(?=.{0,9}[!@#$%^&*()_+=-{};:'<>,./?][^!@#$%^&*()_+=-{};:'<>,./?]{0,7})(?!.*[@.]).{8,}$";
+		Pattern compiledPattern6 = Pattern.compile(passwordPattern5);
+		Matcher matcher6 = compiledPattern6.matcher(password);
 		
-		if(matcher5.matches())
+		if(matcher6.matches())
 		{
 			System.out.println("Valid password.");
 		}
