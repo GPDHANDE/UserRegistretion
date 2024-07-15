@@ -6,43 +6,41 @@ import java.util.regex.Pattern;
 
 public class UserRegistration 
 {
-	
-
-	public static void main(String[] args) 
+	public static String FirstName(String name)
 	{
-		Scanner sc = new Scanner(System.in);
-		System.out.println("Enter first name: ");
-		String firstName = sc.next();
 		String firstNamePattern = "^[A-Z][a-zA-Z]{2,}$";
 		Pattern compiledPattern1 = Pattern.compile(firstNamePattern);
-		Matcher matcher1 = compiledPattern1.matcher(firstName);
+		Matcher matcher1 = compiledPattern1.matcher(name);
 		
 		if(matcher1.matches()) 
 		{
-			System.out.println("Valid first name.");
+			return "HAPPY";
 		}
 		else
 		{
-			System.out.println("Invalid first name.");
+			return"SAD";
 		}
 		
-		System.out.println("Enter last name: ");
-		String lastName = sc.next();
+	}
+	
+	public static String LastName(String name)
+	{
 		String lastNamePattern = "^[A-Z][a-zA-Z]{2,}$";
 		Pattern compiledPattern2 = Pattern.compile(lastNamePattern);
-		Matcher matcher2 = compiledPattern2.matcher(lastName);
+		Matcher matcher2 = compiledPattern2.matcher(name);
 		
 		if(matcher2.matches()) 
 		{
-			System.out.println("Valid last name.");
+			return "HAPPY";
 		}
 		else
 		{
-			System.out.println("Invalid last name.");
+			return"SAD";
 		}
-		
-		System.out.println("Enter the email: ");
-		String email = sc.next();
+	}
+	
+	public static String Email(String email)
+	{
 		String emailPattern = "^[a-zA-Z0-9._%+-]+\\.[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,6}(\\.[a-zA-Z]{2,6})?$";
 		
 		Pattern compiledPattern3 = Pattern.compile(emailPattern);
@@ -50,43 +48,56 @@ public class UserRegistration
 		
 		if(matcher3.matches())
 		{
-			System.out.println("Valid Email.");
+			return "HAPPY";
 		}
 		else
 		{
-			System.out.println("Invalid Email.");
+			return"SAD";
 		}
-		
-		System.out.println("Enter the mobile number: ");
-		sc.nextLine();
-		String mobileNo = sc.nextLine();
+	}
+	
+	public static String MobileNumber(String mobileNo)
+	{
 		String mobilePattern = "^\\d{2} \\d{10}$";
 		Pattern compiledPattern4 = Pattern.compile(mobilePattern);
 		Matcher matcher4 = compiledPattern4.matcher(mobileNo);
 		
 		if(matcher4.matches())
 		{
-			System.out.println("Valid Mobile Number.");
+			return "HAPPY";
 		}
 		else
 		{
-			System.out.println("Invalid Mobile Number.");
+			return"SAD";
 		}
 		
-		System.out.println("Enter the password: ");
-		String password = sc.next();
-		String passwordPattern5 = "^(?=.*[A-Z])(?=.*[0-9])(?=.{0,9}[!@#$%^&*()_+=-{};:'<>,./?][^!@#$%^&*()_+=-{};:'<>,./?]{0,7})(?!.*[@.]).{8,}$";
-		Pattern compiledPattern6 = Pattern.compile(passwordPattern5);
-		Matcher matcher6 = compiledPattern6.matcher(password);
+	}
+	
+	public static String PassWord(String password)
+	{
+		 String passwordPattern = "^(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$";
+	     String specialCharacterPattern = "[@$!%*?&]";
+
+	     Pattern compiledPattern5 = Pattern.compile(passwordPattern);
+	     Pattern specialCharacterCompiledPattern = Pattern.compile(specialCharacterPattern);
+
+	     Matcher matcher5 = compiledPattern5.matcher(password);
+	     Matcher specialCharacterMatcher = specialCharacterCompiledPattern.matcher(password);
+
+	     int specialCharacterCount = 0;
+	     while(specialCharacterMatcher.find()) {
+	         specialCharacterCount++;
+	     }
+	     if(matcher5.matches() && specialCharacterCount == 1) {
+	         return "HAPPY";
+	     }else {
+	         return "SAD";
+	     }
 		
-		if(matcher6.matches())
-		{
-			System.out.println("Valid password.");
-		}
-		else
-		{
-			System.out.println("Invalid password.");
-		}
+	}
+	
+	public static void main(String[] args) 
+	{
 		
 	}
 	
