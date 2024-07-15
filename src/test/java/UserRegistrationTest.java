@@ -1,8 +1,14 @@
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.List;
+
 import org.junit.Assert;
 import org.junit.Test;
 
 import Org.UserRegistration.UserRegistration;
-
+//import org.junit.jupiter.params.ParameterizedTest;
+//import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.runners.Parameterized.Parameters;
 
 public class UserRegistrationTest 
 {
@@ -18,6 +24,16 @@ public class UserRegistrationTest
 		String result = UserRegistration.LastName("Dhande");
 		Assert.assertEquals("HAPPY", result);
 	}
+	
+	 @Parameters
+	    public static List<Object> data()
+	 {
+	        return Arrays.asList(new Object[]
+	        		{
+	        			"nitish.prjapati@gmail.com",
+	        	        "harshal.gotarne@gmail.com",
+	                });
+	 } 
 	@Test
 	public void ValidateEmail()
 	{
