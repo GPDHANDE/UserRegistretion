@@ -85,10 +85,12 @@ public class UserRegistration
 	     Matcher specialCharacterMatcher = specialCharacterCompiledPattern.matcher(password);
 
 	     int specialCharacterCount = 0;
-	     while(specialCharacterMatcher.find()) {
+	     while(specialCharacterMatcher.find()) 
+	     {
 	         specialCharacterCount++;
 	     }
-	     if(matcher5.matches() && specialCharacterCount == 1) {
+	     if(matcher5.matches() && specialCharacterCount == 1) 
+	     {
 	         return "HAPPY";
 	     }else {
 	         return "SAD";
