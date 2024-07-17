@@ -15,42 +15,42 @@ public class UserRegistrationTest
 	@Test
 	public void ValidateFirstName()
 	{
-		String result = UserRegistration.FirstName("Gaurav");
-		Assert.assertEquals("HAPPY", result);
+		boolean result = UserRegistration.FirstName("Gaurav");
+		Assert.assertTrue(result);
 	}
 	@Test
 	public void ValidateLastName()
 	{
-		String result = UserRegistration.LastName("Dhande");
-		Assert.assertEquals("HAPPY", result);
+		boolean result = UserRegistration.LastName("Dhande");
+		Assert.assertTrue(result);
 	}
 	
-	 @Parameters
-	    public static List<Object> data()
-	 {
-	        return Arrays.asList(new Object[]
-	        		{
-	        			"nitish.prjapati@gmail.com",
-	        	        "harshal.gotarne@gmail.com",
-	                });
-	 } 
+//	 @Parameters
+//	    public static List<Object> data()
+//	 {
+//	        return Arrays.asList(new Object[]
+//	        		{
+//	        			"nitish.prjapati@gmail.com",
+//	        	        "harshal.gotarne@gmail.com",
+//	                });
+//	 } 
 	@Test
 	public void ValidateEmail()
 	{
-		String result = UserRegistration.Email("abc.xyz@bl.co.in");
-		Assert.assertEquals("HAPPY", result);
+		boolean result = UserRegistration.Email("abc.xyz@bl.co.in");
+		Assert.assertTrue(result);
 	}
 	@Test
 	public void ValidateMobileNo()
 	{
-		String result = UserRegistration.MobileNumber("91 7977139767");
-		Assert.assertEquals("HAPPY", result);
+		boolean result = UserRegistration.MobileNumber("91 7977139767");
+		Assert.assertTrue("HAPPY", result);
 	}
 	@Test
 	public void ValidatePassword()
 	{
-		String result = UserRegistration.PassWord("Gaurav@123");
-		Assert.assertEquals("HAPPY", result);
+		boolean result = UserRegistration.PassWord("Gaurav@123");
+		Assert.assertTrue(result);
 	}
 	
 	
