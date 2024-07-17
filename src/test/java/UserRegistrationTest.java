@@ -2,13 +2,16 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 
-import org.junit.Assert;
-import org.junit.Test;
+
+
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.ValueSource;
+import org.junit.jupiter.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 
 import Org.UserRegistration.UserRegistration;
-//import org.junit.jupiter.params.ParameterizedTest;
-//import org.junit.jupiter.params.provider.ValueSource;
-import org.junit.runners.Parameterized.Parameters;
+
 
 public class UserRegistrationTest 
 {
@@ -16,41 +19,41 @@ public class UserRegistrationTest
 	public void ValidateFirstName()
 	{
 		boolean result = UserRegistration.FirstName("Gaurav");
-		Assert.assertTrue(result);
+		Assertions.assertTrue(result);
 	}
 	@Test
 	public void ValidateLastName()
 	{
 		boolean result = UserRegistration.LastName("Dhande");
-		Assert.assertTrue(result);
+		Assertions.assertTrue(result);
 	}
 	
-//	 @Parameters
-//	    public static List<Object> data()
-//	 {
-//	        return Arrays.asList(new Object[]
-//	        		{
-//	        			"nitish.prjapati@gmail.com",
-//	        	        "harshal.gotarne@gmail.com",
-//	                });
-//	 } 
-	@Test
-	public void ValidateEmail()
+	@ParameterizedTest
+	@ValueSource(strings ={
+			"gp.dhande12@gmail.com",
+            "nitish.prjapati@gmail.com",
+            "harshal.gotarne@gmail.com",
+            "amruta.shinde@gmail.com",
+            "anjali.patil@gmail.com",
+            
+    })
+	
+	public void ValidateEmail(String email)
 	{
-		boolean result = UserRegistration.Email("abc.xyz@bl.co.in");
-		Assert.assertTrue(result);
+		boolean result = UserRegistration.Email(email);
+		Assertions.assertTrue(result);
 	}
 	@Test
 	public void ValidateMobileNo()
 	{
 		boolean result = UserRegistration.MobileNumber("91 7977139767");
-		Assert.assertTrue("HAPPY", result);
+		Assertions.assertTrue(result);
 	}
 	@Test
 	public void ValidatePassword()
 	{
 		boolean result = UserRegistration.PassWord("Gaurav@123");
-		Assert.assertTrue(result);
+		Assertions.assertTrue(result);
 	}
 	
 	
